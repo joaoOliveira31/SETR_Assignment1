@@ -43,20 +43,23 @@
 	 */
 	void MySAGMax();
 
-	/** \brief Funcao MySAGAvg
+	/** \brief Funcao MySAGAvg()
 	* \author Goncalo
-	* \param[in,out] Describe Sem argumentos
-	* \param[in,out] Each one in an individual line
-	* \return Retorna 0
-	* \date 22-3-21
+	* Returns the average of the values of the stream window (rounded to an int)
+	
+
+
+	* \return Media dos valores do array
 	*/
+
 	int MySAGAvg();
 
-	/** \brief Funcao MySAGFreq
+	/** \brief Funcao MySAGFreq()
 	* \author Goncalo
-	* \param[in,out] Describe Sem argumentos
-	* \param[in,out] Each one in an individual line
-	* \return Retorna 0
-	* \date 22-3-21
+    * Returns the number of times that a given value, passed as argument,
+	* exists in the stream window
+	
+	* \return Frequencia que o valor introduzido (number) aparece no array
 	*/
+
 	int MySAGFreq(int number);
