@@ -5,7 +5,8 @@
 @author João Oliveira, Diogo Leão, Gonçalo Moniz
 
 Este programa deixa o utilizador adicionar numeros inteiros a um array e fazer operações com esses valores.
-Para utilizar, basta escolher a opção que se quer executar com o numero indicado.
+
+@bug Introduzir algo que não seja um numero dá erro
 
 
 */

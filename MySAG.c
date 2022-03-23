@@ -1,49 +1,84 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "MySAG.h"
 
-static stream[100];
 
-void MySAGInsert()
-{
-	static int pos=0;
-	printf("Valor a inserir: ");
-	scanf("%d",&stream[pos]);
-	pos++;
-}
+
+static int array[maxSize];
+static int size = 0;
+
 
 void MySAGInit()
 {
-	int opc;
-	while(1)
-	{
-		printf("Escolha uma opção:\n");
-		printf("1:Adicionar Valor\n");
-		printf("2:Valor Maximo\n");
-		printf("3:Valor Minimo\n");
-		printf("4:Valor Medio\n");
-		printf("5:Frequencia Valor\n");
-		printf("0:Sair\n");
-		scanf("%d",&opc);
-		if(opc==0)
-			break;
-		else if(opc==1)
-			MySAGInsert();
-		//else if(opc==2)
-			//MySAGMax();
-		//else if(opc==3)
-			//MySAGMin();
-		//else if(opc==4)
-			//MySAGAvg();
-		//else if(opc==5)
-			//MySAGFreq();
-		else
-			printf("Opção Invalida\n");
-
-	}
-	printf("Saiu\n");
+	printf("Adicione %d valores\n",maxSize);
 }
 
-int main(void)
+void MySAGInsert()
 {
-	MySAGInit();
+	printf("Valor a inserir: ");
+	scanf("%d",&array[size]);
+	size++;
+}
+
+void MySAGMax(){
+  
+    int temp=0;
+	//int size=sizeof(stream)/sizeof(stream[0]);
+
+    for (int i = 0; i < size; ++i) {
+    
+    if (temp < array[i]) {
+      temp = array[i];
+	  
+    }
+   
+  }
+  printf("Máximo é %d \n",temp);
+  
+}
+
+void MySAGMin(){
+
+    int temp=array[0];
+	//int size= sizeof(stream)/sizeof(stream[0]);
+    for (int i = 0; i < size; ++i) {
+    
+    if ( temp > array[i]) {
+      temp = array[i];
+	  printf("switch happens\n");
+    }
+   
+  }
+  printf("Minimo é %d \n",temp);
+  // for(int i=0; i<size; i++) {
+  //    printf("Array[%d] = %d ",i, array[i]);
+  // }
+}
+
+
+int MySAGAvg()
+{
+   //printf("MySAGAvg running...\n"); 
+   int ave = 0;
+   int var = 0;
+   //printf("SIZE = %d\n",size);
+   for (int i = 0; i < size; i++)
+   {
+       var = var + array[i];
+   }
+   ave = var/size;
+   return ave;
+}
+
+int MySAGFreq(int number)
+{
+   //printf("MySAGFreq running...\n"); 
+   int sum = 0;
+
+   for (int i = 0 ; i < size ; i++)
+   {
+      if(number==array[i]){sum=sum+1;}
+   }
+   return sum;
 }

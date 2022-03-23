@@ -1,7 +1,7 @@
 DEFAULT_TARGET=app
-OBJECTS = Primeiro.o
+OBJECTS = main.o MySAG.o
 
-CFLAGS = -g -Wall -O3
+CFLAGS = -g -O3
 LDLIBS=
 CC=gcc
 
